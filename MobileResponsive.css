@@ -1,0 +1,443 @@
+﻿/* =========================================================
+   LAB TAIF — MOBILE APP UI
+   Desktop styles remain untouched.
+   ========================================================= */
+
+
+
+@media (max-width: 768px) {
+  html,
+  body,
+  #root {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    -webkit-text-size-adjust: 100%;
+    overscroll-behavior-x: none;
+  }
+
+  .app-shell {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .sidebar {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: min(82vw, 310px);
+    max-width: 310px;
+    transform: translateX(-105%);
+    transition: transform .22s ease;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body.sidebar-open .sidebar {
+    transform: translateX(0);
+  }
+
+  .main {
+  width: 100%;
+  min-width: 0;
+  margin-left: 0 !important;
+  overflow-x: hidden;
+  padding-bottom: 20px;
+}
+
+  .topbar {
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    min-height: 64px;
+    padding: 10px 12px;
+    gap: 8px;
+    position: sticky;
+    top: 0;
+    z-index: 900;
+    box-sizing: border-box;
+  }
+
+  .top-actions {
+    min-width: 0;
+    gap: 6px;
+  }
+
+  .top-icon {
+    min-width: 42px;
+    min-height: 42px;
+    padding: 8px;
+  }
+
+  .mobile-toggle {
+    display: inline-flex !important;
+  }
+
+  .profile-btn {
+    max-width: 150px;
+    min-height: 42px;
+    padding: 6px 8px;
+  }
+
+  .profile-btn > span {
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .profile-btn b,
+  .profile-btn small {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .content {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    overflow-x: hidden;
+  }
+
+  .heading {
+    width: 100%;
+    box-sizing: border-box;
+    gap: 12px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .heading > div:last-child {
+    width: 100%;
+  }
+
+  .heading button,
+  .print-btn,
+  .lt-primary {
+    min-height: 44px;
+    touch-action: manipulation;
+  }
+
+  .panel {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .panel-head {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .filters {
+    overflow: visible;
+  }
+
+  .filters input,
+  .filters select,
+  .filters button {
+    width: 100%;
+    min-height: 44px;
+    box-sizing: border-box;
+  }
+
+  /* Tables become horizontally scrollable instead of breaking the page. */
+  .table-wrap,
+  .table-container,
+  .inventory-table-wrap {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table {
+    min-width: 680px;
+  }
+
+  /* Dashboard cards */
+  .stats,
+  .stat-grid,
+  .dashboard-grid,
+  .cards-grid,
+  .grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .stat {
+    min-height: 88px;
+  }
+
+  /* Forms and modals */
+  .modal,
+  .modal-card,
+  .modal-content {
+    width: calc(100vw - 24px) !important;
+    max-width: calc(100vw - 24px) !important;
+    max-height: calc(100vh - 30px);
+    box-sizing: border-box;
+    overflow-y: auto;
+  }
+
+  .form-grid,
+  .form-row,
+  .form-fields {
+    grid-template-columns: 1fr !important;
+    flex-direction: column;
+  }
+
+  input,
+  select,
+  textarea,
+  button {
+    font-size: 16px;
+  }
+
+  /* Keep long text from pushing the viewport wider. */
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  small,
+  span,
+  td,
+  th {
+    overflow-wrap: anywhere;
+  }
+
+
+
+  /* Dark overlay when sidebar is opened */
+  body.sidebar-open::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: rgba(0, 0, 0, .58);
+  }
+
+  /* Prevent sidebar overlay from covering the sidebar itself */
+  body.sidebar-open .sidebar {
+    z-index: 1001;
+  }
+
+  /* Safe-area support for modern Android/iOS */
+  .topbar {
+    padding-top: max(10px, env(safe-area-inset-top));
+  }
+
+  .main {
+    padding-bottom: calc(82px + env(safe-area-inset-bottom));
+  }
+}
+/* =========================================================
+   LAB TAIF — MOBILE SIDEBAR / LOGOUT / NOTIFICATIONS FIX
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    width: min(290px, 86vw);
+
+    height: 100dvh;
+    max-height: 100dvh;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    padding-bottom: calc(20px + env(safe-area-inset-bottom));
+
+    z-index: 1000;
+
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .sidebar .nav {
+    flex: 1 1 auto;
+    min-height: 0;
+  }
+
+  .sidebar .side-user {
+    flex-shrink: 0;
+  }
+
+  .sidebar .logout {
+    position: sticky;
+    bottom: 0;
+
+    flex-shrink: 0;
+
+    width: 100%;
+    min-height: 48px;
+
+    margin-top: 12px;
+    margin-bottom: 8px;
+
+    z-index: 5;
+  }
+
+  /* Prevent the main topbar from clipping icons */
+  .topbar {
+    position: relative;
+    z-index: 100;
+
+    min-width: 0;
+    overflow: visible;
+  }
+
+  .top-actions {
+    position: relative;
+
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 6px;
+
+    overflow: visible;
+  }
+
+  .top-icon {
+    position: relative;
+
+    flex: 0 0 auto;
+
+    width: 42px;
+    height: 42px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: visible;
+  }
+
+  /* Bell */
+  .notification-btn {
+    overflow: visible;
+  }
+
+  .bell-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    font-size: 20px;
+    line-height: 1;
+
+    transform: translateY(1px);
+  }
+
+  /* Notification number */
+  .notification-btn .notify-dot {
+    position: absolute;
+
+    top: -3px;
+    right: -3px;
+
+    min-width: 19px;
+    height: 19px;
+
+    padding: 0 4px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 999px;
+
+    font-size: 10px;
+    font-weight: 800;
+    line-height: 1;
+
+    z-index: 20;
+
+    pointer-events: none;
+  }
+
+  /* Notification dropdown */
+  .dropdown-wrap {
+    position: relative;
+    overflow: visible;
+  }
+
+  .notification-panel {
+    position: fixed;
+
+    top: 62px;
+    right: 10px;
+    left: auto;
+
+    width: min(300px, calc(100vw - 20px));
+    max-width: calc(100vw - 20px);
+
+    max-height: min(360px, calc(100dvh - 82px));
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    z-index: 2000;
+
+    box-sizing: border-box;
+  }
+
+  /* Profile dropdown also stays inside viewport */
+  .profile-menu {
+    position: fixed;
+
+    top: 62px;
+    right: 10px;
+    left: auto;
+
+    width: min(260px, calc(100vw - 20px));
+    max-width: calc(100vw - 20px);
+
+    z-index: 2000;
+  }
+
+  /* Don't let profile text push the topbar outside the screen */
+  .profile-btn {
+    max-width: 150px;
+    min-width: 0;
+  }
+
+  .profile-btn span {
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .profile-btn span b,
+  .profile-btn span small {
+    display: block;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

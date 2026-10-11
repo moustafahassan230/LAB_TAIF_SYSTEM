@@ -1,0 +1,48 @@
+﻿
+/* LAB TAIF ABOUT â€” premium visual layer only */
+.lt-about-premium .about-premium-hero{
+  position:relative;display:grid;grid-template-columns:1.08fr .92fr;
+  min-height:420px;border:1px solid rgba(34,160,255,.42);border-radius:18px;
+  overflow:hidden;background:linear-gradient(105deg,#071a35 0%,#061a2b 48%,#071b2d 100%);
+  box-shadow:0 0 45px rgba(0,130,255,.12),inset 0 1px rgba(255,255,255,.05);
+}
+.about-lab-visual{position:relative;overflow:hidden;min-height:420px;
+  background:radial-gradient(circle at 55% 48%,rgba(0,157,255,.25),transparent 32%),
+  linear-gradient(135deg,#0b2455,#07192f 62%,#041423);}
+.about-lab-grid{position:absolute;inset:0;opacity:.25;
+  background-image:linear-gradient(rgba(41,155,255,.15) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(41,155,255,.15) 1px,transparent 1px);background-size:34px 34px;
+  mask-image:linear-gradient(to right,black,transparent);}
+.about-glow{position:absolute;width:330px;height:330px;left:34%;top:12%;
+  border-radius:50%;background:rgba(0,170,255,.13);filter:blur(45px);}
+.about-orbit{position:absolute;border:1px solid rgba(35,180,255,.38);border-radius:50%;
+  transform:rotate(-25deg);}.orbit-a{width:340px;height:220px;left:26%;top:20%;}
+.orbit-b{width:410px;height:280px;left:20%;top:12%;border-style:dashed;opacity:.65;}
+.about-flask{position:absolute;left:20%;bottom:62px;font-size:115px;filter:drop-shadow(0 0 18px rgba(0,190,255,.7));transform:rotate(-4deg);}
+.about-microscope{position:absolute;left:50%;top:72px;font-size:190px;filter:drop-shadow(0 0 28px rgba(0,145,255,.65));}
+.about-visual-label{position:absolute;left:7%;bottom:25px;color:#21c8ff;font-size:12px;font-weight:800;letter-spacing:3px;}
+.about-premium-copy{padding:64px 58px;display:flex;flex-direction:column;justify-content:center;
+  background:linear-gradient(135deg,rgba(5,23,42,.72),rgba(5,29,44,.94));}
+.about-premium-copy h2{font-size:64px;line-height:.95;margin:14px 0 5px;letter-spacing:2px;}
+.about-premium-copy h3{font-size:27px;margin:0 0 22px;color:#dbe8fa;}
+.about-premium-copy p{max-width:680px;color:#b9cde4;line-height:1.8;font-size:16px;}
+.about-hero-tags{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px;}
+.about-hero-tags span{padding:12px 17px;border:1px solid rgba(34,177,255,.42);border-radius:10px;color:#cde8ff;font-size:11px;font-weight:800;letter-spacing:.5px;background:rgba(0,90,150,.1);}
+.about-feature-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:16px;}
+.about-feature-card{position:relative;min-height:250px;padding:24px 18px;border:1px solid rgba(56,132,196,.35);
+  border-radius:15px;text-align:center;background:linear-gradient(180deg,rgba(7,27,48,.94),rgba(4,18,34,.98));
+  overflow:hidden;transition:.25s ease;}
+.about-feature-card:hover{transform:translateY(-5px);box-shadow:0 12px 30px rgba(0,0,0,.25);border-color:rgba(80,180,255,.7);}
+.about-feature-icon{width:62px;height:62px;margin:0 auto 20px;display:grid;place-items:center;border-radius:50%;
+  font-size:27px;background:rgba(0,100,170,.16);border:1px solid currentColor;box-shadow:0 0 22px currentColor;}
+.about-feature-card h3{font-size:17px;line-height:1.25;margin:0 0 10px;color:#f2f7ff;}
+.about-feature-line{width:35px;height:2px;margin:0 auto 12px;background:currentColor;}
+.about-feature-card p{color:#9fb6ce;font-size:12px;line-height:1.6;margin:0;}
+.about-feature-arrow{position:absolute;bottom:15px;left:50%;transform:translateX(-50%);font-size:18px;}
+.about-feature-card.blue{color:#269dff}.about-feature-card.cyan{color:#13d8e8}.about-feature-card.purple{color:#8667ff}
+.about-feature-card.green{color:#38df87}.about-feature-card.gold{color:#ffbf24}.about-feature-card.red{color:#ff4e65}
+@media(max-width:1200px){.about-feature-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:850px){.lt-about-premium .about-premium-hero{grid-template-columns:1fr}.about-lab-visual{min-height:300px}.about-premium-copy{padding:35px 25px}.about-premium-copy h2{font-size:48px}.about-feature-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.about-feature-grid{grid-template-columns:1fr}.about-microscope{font-size:130px;left:45%}.about-flask{font-size:85px}}
+
+

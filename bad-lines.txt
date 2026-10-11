@@ -1,0 +1,119 @@
+1: ﻿import { useEffect, useMemo, useState } from "react";
+144:       ["dashboard", "âŒ‚", "Dashboard"],
+151:       ["all", "â–£", "All Items"],
+152:       ["low", "âڑ ", "Low Stock"],
+153:       ["out", "âœ•", "Out of Stock"],
+154:       ["soon", "â—·", "Expiring Soon"],
+155:       ["expired", "â–£", "Expired Items"],
+156:       ["category", "â–¦", "Category"],
+163:       ["in", "â†“", "Stock In (Receive)"],
+164:       ["outop", "â†‘", "Stock Out (Consume)"],
+165:       ["request", "ًں›’", "Request List"],
+166:       ["history", "â†»", "Inventory History"],
+173:       ["forms", "ًں“‹", "Forms Center"],
+174:       ["reports", "â–¤", "Reports & Files"],
+175:       ["staff", "â™™", "Staff / Users"],
+176:       ["audit", "â—‰", "Audit Log"],
+177:       ["settings", "âڑ™", "Settings"],
+178:       ["about", "â“ک", "About System"],
+1246:             ? "ًں”” LAB TAIF â€” Stock Added"
+1247:             : "ًں”” LAB TAIF â€” Stock Deducted";
+1256:     ? `طھظ… ط¥ط¶ط§ظپط© ${quantity} ظ…ظ† ${itemName} ط¨ظˆط§ط³ط·ط© ${actorName}`
+1257:     : `طھظ… ط®طµظ… ${quantity} ظ…ظ† ${itemName} ط¨ظˆط§ط³ط·ط© ${actorName}`;
+1354:         "ظ„ظ… ظٹطھظ… ط§ظ„ط­ظپط¸:\n" +
+1383:           "ظ‡ظ„ ط£ظ†طھ ظ…طھط£ظƒط¯ ظ…ظ† ط­ط°ظپ:\n" +
+1385:               "ظ‡ط°ط§ ط§ظ„طµظ†ظپ") +
+1386:             "طں"
+1407:           "ظ„ظ… ظٹطھظ… ط§ظ„ط­ط°ظپ:\n" +
+1508:             ًں§ھ
+1646:               â—ڈ Online
+1659:           â†ھ Logout
+1680:             âک°
+1685:             âŒ•
+1713:                 ًں””
+1769:               ًں–¨
+1781:                 ? "âک¾"
+1782:                 : "âک€"}
+1823:                 âŒ„
+1850:                       âڑ™ Settings
+1861:                     â“ک About
+2127:                 ًں§ھ
+2152:                 â†گ Back to
+2170:           آ© 2026 LAB TAIF
+2210:               أ—
+2276:                   Expiry Date ًں“…
+2361:             â†» Refresh
+2370:             ًں–¨ Print
+2383:           icon="ًں“¦"
+2391:           icon="âœ“"
+2399:           icon="âڑ "
+2407:           icon="أ—"
+2415:           icon="â—·"
+2474:             View All Items â†’
+2494:               t="â‰¤ 30 Days"
+2515:               t="â‰¤ 90 Days"
+2529:             View Expiring Items â†’
+2801:    STAFF / USERS â€” PREMIUM ADMIN UI
+2853:   `${safe.username} â€” Permission: ${safe.permissions === "full" ? "full" : "stock out only"} â€” Role: ${safe.role} â€” Status: ${safe.active ? "active" : "disabled"}`
+2880:       {canManageUsers && <button className="lt-primary" onClick={()=>{resetForm(); document.querySelector('.lt-user-editor')?.scrollIntoView({behavior:'smooth'});}}><span>ï¼‹</span> Add New User</button>}
+2884:       <div className="lt-stat-card blue"><span className="lt-stat-icon">â™™</span><small>Total Users</small><strong>{users.length}</strong><em>All system users</em></div>
+2885:       <div className="lt-stat-card gold"><span className="lt-stat-icon">â™›</span><small>Administrators</small><strong>{admins}</strong><em>Full access</em></div>
+2886:       <div className="lt-stat-card purple"><span className="lt-stat-icon">ًں”’</span><small>Limited Users</small><strong>{limited}</strong><em>Stock out only</em></div>
+2887:       <div className="lt-stat-card green"><span className="lt-stat-icon">âœ“</span><small>Active Users</small><strong>{active}</strong><em>Currently active</em></div>
+2895:         <label><span>Permissions</span><select disabled={!canManageUsers} value={form.permissions} onChange={e=>setForm({...form,permissions:e.target.value,role:e.target.value==='full'?'Administrator':'Limited User'})}><option value="consume">Stock Out Only</option>{canManageUsers && <option value="full">Full Access â€” Administrator</option>}</select></label>
+2898:       {canManageUsers ? <div className="lt-actions"><button className="lt-primary" onClick={saveUser}>{editing?'âœ“ Save Changes':'ï¼‹ Add User'}</button>{editing&&<button className="lt-ghost" onClick={resetForm}>Cancel</button>}</div> : <div className="lt-lock-note">ًں”’ You can view users, but only Mustafa Hassan and DR / AMIRA ABOUELKHAIR can add, edit, delete, or change permissions.</div>}
+2903:       <div className="lt-toolbar"><div className="lt-search">âŒ•<input value={query} onChange={e=>setQuery(e.target.value)} placeholder="Search users..."/></div><select value={filter} onChange={e=>setFilter(e.target.value)}><option value="all">All Users</option><option value="admin">Administrators</option><option value="limited">Limited Users</option><option value="inactive">Disabled</option></select></div>
+2904:       <div className="lt-table-wrap"><table className="lt-table"><thead><tr><th>User</th><th>Username</th><th>Role</th><th>Permission</th><th>Status</th><th>Actions</th></tr></thead><tbody>{filtered.map(u=><tr key={u.id}><td><div className="lt-user-cell"><span className="lt-avatar">{u.name?.charAt(0).toUpperCase()||'U'}</span><div><b>{u.name}</b><small>{u.username}</small></div></div></td><td>{u.username}</td><td><span className="lt-role">{u.role}</span></td><td><span className={`lt-badge ${u.permissions==='full'?'success':'warning'}`}>{u.permissions==='full'?'FULL ACCESS':'STOCK OUT ONLY'}</span></td><td><span className={`lt-online ${u.active!==false?'on':'off'}`}><i/> {u.active!==false?'Active':'Disabled'}</span></td><td>{canManageUsers?<div className="lt-row-actions"><button title="Edit" onClick={()=>editUser(u)}>âœژ</button><button className="danger" title="Delete" onClick={()=>deleteUser(u)}>âŒ«</button></div>:<span className="lt-viewonly">VIEW ONLY</span>}</td></tr>)}</tbody></table></div>
+2911:    SETTINGS â€” PREMIUM ADMIN UI
+3086:               @{currentUser?.username} آ· {currentUser?.role || "Administrator"}
+3182:               âœ“ Save Changes
+3185:             {saved && <span className="lt-badge success">âœ“ Changes saved</span>}
+3228:               <small>Administrator آ· Full Control</small>
+3286:               ًں”’ Change Password
+3290:           {saved && <div className="lt-lock-note">âœ“ Changes saved successfully.</div>}
+3360:     ["ًں“¦", "Inventory Management", "Real-time stock tracking and control"],
+3361:     ["â—·", "Expiry Monitoring", "Smart expiry alerts and notifications"],
+3362:     ["ًں“‹", "Forms Center", "Digital forms & printable documents"],
+3363:     ["ًں“ٹ", "Reports & Files", "Advanced reports & data export"],
+3364:     ["â—‰", "Audit Trail", "Full activity traceability"],
+3365:     ["ًں”’", "Secure & Local", "Supabase Auth & access control"],
+3428:           <div className="lt-about-mark">ًں§ھ</div>
+3456:             <span>ًں”’ PRIVATE INSTALLATION</span>
+3457:             <span>âڑ› REACT</span>
+3458:             <span>â—‰ SUPABASE</span>
+3459:             <span>âœ“ SECURE AUTH</span>
+3482:             <em>â†’</em>
+3545:                 Owner آ· Administrator آ· Full Control
+3560:                 Supervisor آ· Administrator آ· Full Control
+3584:               Owner آ· System Administrator
+3589:             âœ¦
+3596:               Laboratory Manager آ· Administrator
+3603:           آ© 2026 LAB TAIF Medical Center آ·
+3604:           Private internal management system آ·
+3633:           ًں–¨ Print
+3648:             ًں–¨ Print Report
+3669:    AUDIT LOG â€” LOCAL ONLY
+3787:           â†» Refresh
+3831:             ًں”ژ
+3879:             â‡© Export / Print
+4128:         â—ڈ
+4241:         "ظ„ظ… طھطھظ… ط¥ط¶ط§ظپط© ط§ظ„طµظ†ظپ:\n" +
+4285:         "ظ‡ظ„ ط£ظ†طھ ظ…طھط£ظƒط¯ ظ…ظ† ط­ط°ظپ:\n" +
+4287:             "ظ‡ط°ط§ ط§ظ„طµظ†ظپ") +
+4288:           "طں"
+4356:           "ظ„ظ… ظٹطھظ… ط§ظ„طھط¹ط¯ظٹظ„:\n" +
+4391:           "ظ„ظ… ظٹطھظ… ط§ظ„ط­ط°ظپ:\n" +
+4428:               ï¼‹ Add New Item
+4438:             ًں–¨ Print
+4530:               أ—
+4622:                 Expiry Date ًں“…
+4645:               âœ“ Save New Item
+4758:           أ—
+4900:             Expiry Date ًں“…
+5087:                         âˆ’
+5102:                           âœژ
+5117:                           ًں—‘
+5296:             â†» Refresh
+5305:             ًں–¨ Print
+5316:           ًں”چ
+5492:                           "â€”"

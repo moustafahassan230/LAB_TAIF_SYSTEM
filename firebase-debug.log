@@ -1,0 +1,23 @@
+[debug] [2026-08-09T23:38:49.781Z] ----------------------------------------------------------------------
+[debug] [2026-08-09T23:38:49.790Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\lab\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting
+[debug] [2026-08-09T23:38:49.791Z] CLI Version:   15.26.0
+[debug] [2026-08-09T23:38:49.791Z] Platform:      win32
+[debug] [2026-08-09T23:38:49.791Z] Node Version:  v24.18.0
+[debug] [2026-08-09T23:38:49.791Z] Detected Agent: unknown
+[debug] [2026-08-09T23:38:49.791Z] Time:          Mon Aug 10 2026 02:38:49 GMT+0300 (Arabian Standard Time)
+[debug] [2026-08-09T23:38:49.791Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-08-09T23:38:52.413Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-08-09T23:38:52.417Z] > authorizing via signed-in user (moustafakhalifa7777@gmail.com)
+[debug] [2026-08-09T23:38:52.418Z] [iam] checking project lab-taif for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-08-09T23:38:52.452Z] Checked if tokens are valid: true, expires at: 1786321081419
+[debug] [2026-08-09T23:38:52.452Z] Checked if tokens are valid: true, expires at: 1786321081419
+[debug] [2026-08-09T23:38:52.454Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/lab-taif:testIamPermissions [none]
+[debug] [2026-08-09T23:38:52.454Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/lab-taif:testIamPermissions  x-goog-user-project=lab-taif
+[debug] [2026-08-09T23:38:52.454Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/lab-taif:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-08-09T23:38:53.291Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/lab-taif:testIamPermissions 200
+[debug] [2026-08-09T23:38:53.291Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/lab-taif:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-08-09T23:38:53.292Z] Checked if tokens are valid: true, expires at: 1786321081419
+[debug] [2026-08-09T23:38:53.292Z] Checked if tokens are valid: true, expires at: 1786321081419
+[debug] [2026-08-09T23:38:53.292Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/lab-taif [none]
+[debug] [2026-08-09T23:38:54.129Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/lab-taif 200
